@@ -1,0 +1,700 @@
+import React from "react";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "./styles.css";
+function Home() {
+  const [Click, SetClick] = useState(false);
+  function User() {
+    return (
+      <>
+        <h2>USER DETAILS PAGE:👤</h2>
+        <h3 class="pink">PLEASE GIVE YOUR DETAILS BELOW👇🏽:</h3>
+
+        <form>
+          <br />
+          <label>
+            Name👤:
+            <input type="text" placeholder="Enter your name" />
+          </label>
+          <br />
+          <br />
+          <label>
+            Email✉️:
+            <input type="email" placeholder="Enter your email" />
+          </label>
+          <br />
+          <br />
+          <label>
+            Password🔑:
+            <input type="password" placeholder="Enter your password" />
+          </label>
+          <br />
+          <br />
+          <h3 class="pink">GENDER</h3>
+          <br />
+          <label>
+            <input type="radio" name="Gender" value="Male" />
+            Male🧔🏽‍♂️
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="radio" name="Gender" value="Female" />
+            Female👩🏽
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="radio" name="Gender" value="Third Gender" />
+            Third Gender🧔🏽‍♀️
+          </label>
+          <br />
+          <br />
+          <h2>WE VALUE YOUR PREFERENCES TO GIVE YOU THE BEST RESULTS🤗🙏🏽</h2>
+          <h3 class="pink">GENRE OF WEB-SERIES THAT YOU LOVE TO WATCH👇🏽:</h3>
+          <br />
+          <label>
+            <input type="checkbox" />
+            Comedy🤣
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="checkbox" />
+            Horror👻
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="checkbox" />
+            Action🔫
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="checkbox" />
+            Romance💘
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="checkbox" />
+            Science Fiction🧪
+          </label>
+          <br />
+          <br />
+          <h2
+            id="tq"
+            style={{ backgroundColor: Click ? "dodgerblue" : "hotpink" }}
+          >
+            {Click
+              ? "Awesome! Your details are in—let the binge-watching begin! 🎉"
+              : "Please enter your details above and hit the submit button to use our website"}
+          </h2>
+          <button
+            id="mybtn"
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              SetClick(true);
+            }}
+          >
+            SUBMIT!
+          </button>
+        </form>
+      </>
+    );
+  }
+
+  function Recommend() {
+    return (
+      <>
+        <h2>RECOMMENDATIONS PAGE</h2>
+        <h2 id="hand">HAND PICKED SERIES FOR YOU!🪄</h2>
+
+        <div id="one" className="we">
+          <h2>GAME OF THRONES🤴🏽👸🏽</h2>
+
+          <img
+            src="https://assets-prd.ignimgs.com/2022/01/14/gameofthrones-allseasons-sq-1642120207458.jpg"
+            alt="GAME OF THRONES COVER IMAGE"
+            height="300"
+            width="300"
+          />
+
+          <details>
+            <summary className="sum">
+              👆🏽 CLICK ME TO READ THE SUMMARY OF "GAME OF THR..."
+            </summary>
+            <p className="para">
+              In the Seven Kingdoms of Westeros, House Stark and House Lannister
+              influence the political fate of the continent. In Westeros' far
+              north, an illegitimate son of House Stark joins a group
+              maintaining a giant wall of ice to protect Westeros from raiders
+              and a group of mythical enemies.
+            </p>
+          </details>
+          <p id="rating">
+            {" "}
+            Star rating: ⭐⭐⭐⭐⭐ <br />
+            <br />
+            <strong>
+              <hr />
+              <hr />
+            </strong>
+            <br />
+            Add yours➕
+          </p>
+          <br />
+          <br />
+          <div className="rb">
+            <button className="wb">WATCH NOW!</button>
+          </div>
+          <br />
+          <br />
+        </div>
+        <p id="line">
+          ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </p>
+        <div
+          id="two"
+          className="us"
+          style={{ display: "flex", alignItems: "center", gap: "20px" }}
+        >
+          <h2>BREAKING BAD ⛓️‍💥🙅🏽‍♂️🙅🏽‍♀️</h2>
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_.jpg"
+            alt="BREAKING BAD COVER IMAGE"
+            height="300"
+            width="500"
+          />
+          <details>
+            <summary className="sum">
+              👆🏽 CLICK ME TO READ THE SUMMARY OF "BREAKING BAD"
+            </summary>
+            <p className="para">
+              A chemistry teacher diagnosed with inoperable lung cancer turns to
+              manufacturing and selling methamphetamine with a former student to
+              secure his family's future.
+            </p>
+          </details>
+          <p id="rating">
+            {" "}
+            Star rating: ⭐⭐⭐⭐⭐ <br />
+            <br />
+            <strong>
+              <hr />
+              <hr />
+            </strong>
+            <br />
+            Add yours➕
+          </p>
+          <div className="rb">
+            <button className="wb">WATCH NOW!</button>
+          </div>
+        </div>
+        <p id="line">
+          ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </p>
+        <div
+          id="three"
+          className="we"
+          style={{ display: "flex", alignItems: "center", gap: "20px" }}
+        >
+          <h2>STRANGER THINGS🪄🧝🏽</h2>
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BMjg2NmM0MTEtYWY2Yy00NmFlLTllNTMtMjVkZjEwMGVlNzdjXkEyXkFqcGc@._V1_.jpg"
+            alt="STRANGER THINGS COVER IMAGE"
+            height="300"
+            width="300"
+          />
+          <details>
+            <summary className="sum">
+              👆🏽 CLICK ME TO READ THE SUMMARY OF "STRANGER THINGS"
+            </summary>
+            <p className="para">
+              In 1980s Indiana, a group of young friends witness supernatural
+              forces and secret government exploits. As they search for answers,
+              the children unravel a series of extraordinary mysteries.
+            </p>
+          </details>
+          <p id="rating">
+            {" "}
+            Star rating: ⭐⭐⭐⭐⭐ <br />
+            <br />
+            <strong>
+              <hr />
+              <hr />
+            </strong>
+            <br />
+            Add yours➕
+          </p>
+          <div className="rb">
+            <button className="wb">WATCH NOW!</button>
+          </div>
+        </div>
+        <p id="line">
+          ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </p>
+        <div
+          id="four"
+          className="us"
+          style={{ display: "flex", alignItems: "center", gap: "20px" }}
+        >
+          <h2>FRIENDS(10 seasons)👯</h2>
+          <img
+            src="https://m.media-amazon.com/images/S/pv-target-images/c7fc75a423fc33698265a27fe446a41026f3c8642fd6c8706c43b897d2ffb3e6.jpg"
+            alt="FRIENDS COVER IMAGE"
+            height="300"
+            width="300"
+          />
+          <details>
+            <summary className="sum">
+              👆🏽 CLICK ME TO READ THE SUMMARY OF "FRIENDS"
+            </summary>
+            <p className="para">
+              The lives of twenty-something friends in New York City, each with
+              their own dreams and drives: Joey a struggling actor, Monica a
+              chef, Rachel a waitress who hopes to work in fashion, Ross a
+              paleontologist, Chandler who hates his job in data processing, and
+              Phoebe a masseuse/musician.
+            </p>
+          </details>
+          <p id="rating">
+            {" "}
+            Star rating: ⭐⭐⭐⭐⭐ <br />
+            <br />
+            <strong>
+              <hr />
+              <hr />
+            </strong>
+            <br />
+            Add yours➕
+          </p>
+          <div className="rb">
+            <button className="wb">WATCH NOW!</button>
+          </div>
+        </div>
+        <p id="line">
+          ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </p>
+        <div
+          id="five"
+          className="we"
+          style={{ display: "flex", alignItems: "center", gap: "20px" }}
+        >
+          <h2>WALKING DEAD 🧟☠️😵</h2>
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BYWQwMGRhNGEtZTNhMy00MzVjLWJhMjItYjcwMDljMTkyNTg2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            height="300"
+            width="300"
+          />
+          <details>
+            <summary className="sum">
+              👆🏽 CLICK ME TO READ THE SUMMARY OF "WALKING DEAD"
+            </summary>
+            <p className="para">
+              Sheriff Deputy Rick Grimes wakes up from a coma to learn the world
+              is in ruins and must lead a group of survivors to stay alive.
+              Sheriff Deputy Rick Grimes gets shot in combat and awakens to a
+              zombie apocalypse. He meets a group on the outskirts of Atlanta
+              and, soon, becomes their leader.
+            </p>
+          </details>
+          <p id="rating">
+            {" "}
+            Star rating: ⭐⭐⭐⭐⭐ <br />
+            <br />
+            <strong>
+              <hr />
+              <hr />
+            </strong>
+            <br />
+            Add yours➕
+          </p>
+          <div className="rb">
+            <button className="wb"> WATCH NOW!</button>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  function Add() {
+    const [count, setCount] = useState(0);
+    return (
+      <>
+        <h2>ADD RECOMMENDATIONS PAGE</h2>
+        <h3 id="hand">GIVE YOUR RECOMMENDATION BELOW:👇🏽</h3>
+        <h3>DETAILS ABOUT THE SERIES 👇🏽:</h3>
+        <form>
+          <br />
+          <label>
+            NAME OF THE SERIES:
+            <input type="text" placeholder="Enter the Name of the series" />
+          </label>
+          <br />
+          <br />
+
+          <h3 class="pink">GENRE OF WEB-SERIES THAT YOU WATCHED👇🏽:</h3>
+          <br />
+          <label>
+            <input type="radio" name="genre" />
+            Comedy🤣
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="radio" name="genre" />
+            Horror👻
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="radio" name="genre" />
+            Action🔫
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="radio" name="genre" />
+            Romance💘
+          </label>
+          <br />
+          <br />
+          <label>
+            <input type="radio" name="genre" />
+            Science Fiction🧪
+          </label>
+          <br />
+          <br />
+          <br />
+          <h2>GIVE YOUR STAR RATINGS:</h2>
+          <div style={{ textAlign: "center" }}>
+            <h1 style={{ fontSize: "24px" }}>
+              {count === 0 && "☆☆☆☆☆"}
+              {count === 1 && "⭐☆☆☆☆"}
+              {count === 2 && "⭐⭐☆☆☆"}
+              {count === 3 && "⭐⭐⭐☆☆"}
+              {count === 4 && "⭐⭐⭐⭐☆"}
+              {count === 5 && "⭐⭐⭐⭐⭐"}
+            </h1>
+
+            <button
+              type="button"
+              id="mybtn"
+              onClick={() => count < 5 && setCount(count + 1)}
+              style={{ margin: "5px" }}
+            >
+              Increase Stars
+            </button>
+
+            <button
+              type="button"
+              id="mybtn"
+              onClick={() => count > 0 && setCount(count - 1)}
+              style={{ margin: "5px" }}
+            >
+              Decrease Stars
+            </button>
+          </div>
+          <h3>EXPRESS YOUR THOUGHTS HERE👇🏽</h3>
+          <br />
+          <textarea
+            rows="20"
+            cols="150"
+            placeholder="Enter your explanation/feedback/review/one-liner here"
+          ></textarea>
+          <br />
+          <br />
+          <h2
+            id="tq"
+            style={{ backgroundColor: Click ? "dodgerblue" : "hotpink" }}
+          >
+            {Click
+              ? "🎊 Thanks for sharing your recommendation! You rock! 🎊"
+              : "Please give your opinion above and hit the submit button"}
+          </h2>
+          <button
+            id="mybtn"
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              SetClick(true);
+            }}
+          >
+            SUBMIT!
+          </button>
+        </form>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <h1 id="head">WELCOME TO WEB-SERIES RECOMMENDATION PAGE!🤗🙏🏽</h1>
+      <h3 id="head" class="pink">
+        THANK YOU FOR TRUSTING OUR PAGE TO GIVE/GET WEB-SERIES
+        RECOMMENDATION..🫂🥰
+      </h3>
+
+      <BrowserRouter>
+        <nav>
+          <div
+            id="contents"
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            <div id="c1">
+              <img
+                alt="USER ICON"
+                src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"
+                height="200"
+                width="200"
+              />
+              <br />
+              <Link
+                to="/User"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="link"
+              >
+                User Details Page👤
+              </Link>
+            </div>
+            <div id="c2">
+              <img
+                alt="RECOMMENDATION LOGO"
+                src="https://thumbs.dreamstime.com/b/recommendation-stamp-rectangular-white-background-isolated-349481126.jpg"
+                height="200"
+                width="200"
+              />
+              <br />
+              <Link
+                to="/Recommend"
+                id="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Web-Series Recommendations🫴🏽
+              </Link>
+            </div>
+            <div id="c3">
+              <img
+                alt="ADD RECOMMENDATION LOGO"
+                src="https://img.freepik.com/premium-vector/modern-plus-logo-template-design_316488-930.jpg"
+                height="200"
+              />
+              <br />
+              <Link
+                to="/Add"
+                id="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Add Your Recommendations➕
+              </Link>
+            </div>
+          </div>
+        </nav>
+        <p id="line">
+          ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </p>
+        <Routes>
+          <Route path="/User" element={<User />} />
+          <Route path="/Recommend" element={<Recommend />} />
+          <Route path="/Add" element={<Add />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <Home />
+    </>
+  );
+}
+/*CSS*/
+* {
+  margin: 0;
+  bottom: 0;
+}
+h1,
+h2,
+h3 {
+  background-color: dodgerblue;
+  color: aliceblue;
+  margin-bottom: 3px;
+  border: 1px;
+  padding: 10px;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+}
+.pink {
+  background-color: hotpink;
+}
+#link {
+  background-color: dodgerblue;
+  color: white;
+  font-size: larger;
+  text-decoration: none;
+}
+#link:hover {
+  background-color: hotpink;
+  text-decoration-line: underline;
+}
+#contents {
+  display: flex;
+  justifycontent: space-around;
+  alignitems: center;
+  text-align: center;
+}
+#line {
+  color: white;
+}
+#tq {
+  margin: 0;
+}
+form label {
+  font-size: large;
+  font-weight: bold;
+}
+form input {
+  font-size: medium;
+}
+form {
+  text-align: center;
+}
+input {
+  border-radius: 2px;
+  border: 30px;
+}
+input:hover {
+  border-color: dodgerblue;
+}
+
+#mybtn {
+  padding: 20px;
+  width: 200px;
+  background-color: hotpink;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  color: white;
+  border: 2px solid white;
+}
+#mybtn:hover {
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+  transition: transform ease-out 1s;
+  transform: scale(1.05);
+}
+.wb {
+  padding: 20px;
+  width: 200px;
+  background-color: hotpink;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  color: white;
+  border: 2px solid white;
+}
+.wb:hover {
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+  transition: transform ease-out 1s;
+  transform: scale(1.05);
+}
+.rb {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.sum {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  margin: 5px;
+  background-color: dodgerblue;
+  color: white;
+  font-style: italic;
+  padding: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.sum:hover {
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+  transition: transform ease-out 1s;
+  transform: scale(1.05);
+}
+.para {
+  font-size: medium;
+  line-height: 1.6;
+  color: black;
+  background-color: #fafafa;
+  padding: 10px;
+  border-left: 4px solid hotpink;
+  margin-top: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.we {
+  border-bottom: 2px solid lightsteelblue;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.us {
+  border-bottom: 2px solid lightsteelblue;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#rating {
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: larger;
+  border-left: 5px solid hotpink;
+  border-right: 5px solid dodgerblue;
+  border-top: 5px solid hotpink;
+  border-bottom: 5px solid dodgerblue;
+  padding: 30px;
+}
+#rating:hover {
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+  transition: transform ease-out 1s;
+  transform: scale(1.05);
+}
+#hand {
+  background-color: hotpink;
+}
+textarea::placeholder {
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#str {
+  background-color: hotpink;
+}
+textarea {
+  border-top: 3px solid hotpink;
+  border-right: 3px solid hotpink;
+  border-bottom: 3px solid dodgerblue; /* bottom border dodgerblue */
+  border-left: 3px solid dodgerblue; /* left border dodgerblue */
+  border-radius: 10px; /* same rounded corners */
+  padding: 12px;
+  font-size: 16px;
+  resize: none; /* optional: stop resizing */
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 105, 180, 0.5), 0 0 6px rgba(30, 144, 255, 0.5); /* pink + blue glow */
+}
